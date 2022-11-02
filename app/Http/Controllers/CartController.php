@@ -14,7 +14,6 @@ class CartController extends Controller
     }
 
     public function addItemToCart($id){
-
         $user = Auth::user();
         DB::beginTransaction();
         $cart = Cart::create([
