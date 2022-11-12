@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\PersonalDataController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,7 @@ Route::get('/admin/login',[ \App\Http\Controllers\LoginController::class,'loginA
 
 Route::get('/adicionar/{id}', [CartController::class,'addItemToCart'])->name('adicionar');
 
+Route::get('/meus-dados', [PersonalDataController::class,'allDataPersonalUser'])->name('meus-dados');
 
 Auth::routes();
 

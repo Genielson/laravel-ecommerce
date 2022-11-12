@@ -9,19 +9,19 @@
 
                 <form>
 
-                    <div class="form-group">
+                    <div class=" m-2 form-group">
                         <label for="exampleInputEmail1">Nome </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu nome ">
+
                     </div>
 
-                    <div class="form-group">
+                    <div class="m-2 form-group">
                         <label for="exampleInputEmail1">CPF </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu CPF">
 
                     </div>
 
-                    <div class="form-group">
+                    <div class="m-2 form-group">
                         <label for="exampleInputEmail1">Estado</label>
                         <select id="estado" name="estado">
                             <option value="AC">Acre</option>
@@ -55,43 +55,43 @@
                         </select>
                       </div>
 
-                      <div class="form-group">
+                      <div class="m-2 form-group">
                         <label for="exampleInputEmail1">Cidade  </label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Sua cidade">
                       </div>
 
-                      <div class="form-group">
+                      <div class="m-2 form-group">
                         <label for="exampleInputEmail1">Logradouro </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu Bairro">
                       </div>
 
-                      <div class="form-group">
+                      <div class="m-2 form-group">
                         <label for="exampleInputEmail1">Numero </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Numero da sua casa/apartamento">
                       </div>
 
-                      <div class="form-group">
+                      <div class="m-2 form-group">
                         <label for="exampleInputEmail1"> Bairro </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu bairro">
                       </div>
 
-                    <div class="form-group">
+                    <div class="m-2 form-group">
                         <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+
                     </div>
 
-                    <div class="form-group">
+                    <div class="m-2 form-group">
                       <label for="exampleInputPassword1">Senha </label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
                     </div>
 
-                    <div class="form-group">
+                    <div class="m-2 form-group">
                         <label for="exampleInputPassword1">Confirmar Senha </label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
                     </div>
 
-                    <button type="submit" class="btn btn-primary"> Salvar </button>
+                    <button type="submit" class="btn btn-primary m-2"> Salvar </button>
                   </form>
 
             </div>
