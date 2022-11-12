@@ -28,6 +28,8 @@ Route::get('/forma-pagamento', [\App\Http\Controllers\PaymentController::class,'
 Route::get('/admin/login',[ \App\Http\Controllers\LoginController::class,'loginAdmin']);
 
 Route::get('/adicionar/{id}', [CartController::class,'addItemToCart'])->name('adicionar');
+Route::get('/detalhes/{id}', [ProductController::class,'detailProduct'])->name('detalhes');
+
 
 Route::get('/meus-dados', [PersonalDataController::class,'allDataPersonalUser'])->name('meus-dados');
 Route::get('/meus-desejos', [UserWishController::class,'allDataWishUser'])->name('meus-desejos');
