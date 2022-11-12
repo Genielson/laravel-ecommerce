@@ -26,6 +26,7 @@ Route::get('/admin/login',[ \App\Http\Controllers\LoginController::class,'loginA
 
 Route::get('/adicionar/{id}', [CartController::class,'addItemToCart'])->name('adicionar');
 
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
