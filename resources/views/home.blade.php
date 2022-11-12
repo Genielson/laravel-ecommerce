@@ -5,14 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">Minha Conta</div>
 
                 <ul class="list-group">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                    <li class="list-group-item">Porta ac consectetur ac</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
+                    <li class="list-group-item"> <a href="">Meus Pedidos</a></li>
+                    <li class="list-group-item"><a href="">Meu Carrinho</a></li>
+                    <li class="list-group-item"><a href="">Lista de Desejos</a></li>
+                    <li class="list-group-item"><a href="">Alterar Dados Pessoais</a></li>
+                    <li class="list-group-item"><a href="">Sair</a></li>
                 </ul>
 
 
