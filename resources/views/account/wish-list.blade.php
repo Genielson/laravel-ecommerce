@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Meus Desejos </div>
+                <div class="card-header"> Meus Desejos </div>
 
 
                 <table class="table">
@@ -22,10 +22,10 @@
 
                       <tr>
                         <th scope="row"></th>
-                        <td></td>
-                        <td> Smartphone Samsung Galaxy S10 </td>
+                        <td>Smartphone Samsung Galaxy S10</td>
                         <td> Eletronicos </td>
                         <td> <img width="50px;" height="50px;" src="{{ asset('img/product-1.jpg') }}"> </td>
+
                       </tr>
 
 
