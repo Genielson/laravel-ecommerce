@@ -25,7 +25,7 @@
                         <td></td>
                         <td> Smartphone Samsung Galaxy S10 </td>
                         <td> Eletronicos </td>
-                        <td> <img width="50px;" height="50px;" src="{{ asset('img/algumacoisa.png') }}"> </td>
+                        <td> <img width="50px;" height="50px;" src="{{ asset('img/product-1.jpg') }}"> </td>
                       </tr>
 
 
