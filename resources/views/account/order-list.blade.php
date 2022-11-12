@@ -23,10 +23,9 @@
 
                       <tr>
                         <th scope="row"></th>
-                        <td></td>
                         <td>1000</td>
-                        <td>Smartphone Samsung Galaxy S10 </td>
-                        <td><img src="{{ asset('img/algumacoisa.png') }}"></td>
+                        <td>Smartphone Samsung Galaxy S10</td>
+                        <td><img width="50px;" height="50px;" src="{{ asset('img/product-1.jpg') }}"></td>
                         <td>23-10-2022</td>
                         <td> Em separação </td>
                       </tr>

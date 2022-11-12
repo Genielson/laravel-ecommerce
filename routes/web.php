@@ -4,6 +4,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\PersonalDataController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserWishController;
+use App\Http\Controllers\UserOrderController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,8 @@ Route::get('/adicionar/{id}', [CartController::class,'addItemToCart'])->name('ad
 
 Route::get('/meus-dados', [PersonalDataController::class,'allDataPersonalUser'])->name('meus-dados');
 Route::get('/meus-desejos', [UserWishController::class,'allDataWishUser'])->name('meus-desejos');
+Route::get('/meus-pedidos', [UserOrderController::class,'allDataOrderUser'])->name('meus-pedidos');
+
 
 Auth::routes();
 
