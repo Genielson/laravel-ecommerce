@@ -1,5 +1,4 @@
 @extends('basic')
-
 @section('content')
 
     <div class="product-big-title-area">
