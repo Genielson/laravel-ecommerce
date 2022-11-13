@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Address;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use App\Models\Person;
@@ -78,10 +79,19 @@ class RegisterController extends Controller
                 'password' => Hash::make($dataForm['password']),
         ]);
 
+        $address = new Address();
+        $address->id_user = $user->id;
+        $address->address = $dataForm['address'];
+        $address->district = $dataForm['district'];
+        $address->state = $dataForm['state'];
+        $address->city = $dataForm['city'];
+        $address->country = $dataForm['country'];
+        $address->number = $dataForm['number'];
+
         $person = new Person();
         $person->id_user = $user->id;
 
-        if($person->save()){
+        if($address->save() && $person->save()){
             DB::commit();
         }else{
             DB::rollBack();
