@@ -44,6 +44,12 @@
                       </div>
 
                       <div class="m-2 form-group">
+                        <label for="exampleInputEmail1">CEP </label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" value="{{ $address->cep }}"   aria-describedby="emailHelp" placeholder="Seu CEP">
+
+                    </div>
+
+                      <div class="m-2 form-group">
                         <label for="exampleInputEmail1">Logradouro </label>
                         <input type="email" class="form-control" id="exampleInputEmail1" value="{{ $address->address }}"  aria-describedby="emailHelp" placeholder="Seu Bairro">
                       </div>
