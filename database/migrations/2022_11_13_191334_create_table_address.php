@@ -16,13 +16,17 @@ class CreateTableAddress extends Migration
         Schema::create('table_address', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_user');
-            $table->string('address');
-            $table->string('number');
-            $table->string('district');
-            $table->string('city');
-            $table->string('state');
-            $table->string('country');
+            $table->string('address')->default('');
+            $table->string('number')->default('');;
+            $table->string('district')->default('');;
+            $table->string('city')->default('');;
+            $table->string('state')->default('');;
+            $table->string('country')->default('');;
             $table->timestamps();
+        });
+
+        Schema::table('table_address', function (Blueprint $table) {
+            $table->foreign('id_user')->references('id')->on('users');
         });
     }
 

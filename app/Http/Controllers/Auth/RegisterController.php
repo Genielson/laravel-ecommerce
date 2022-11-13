@@ -81,12 +81,7 @@ class RegisterController extends Controller
 
         $address = new Address();
         $address->id_user = $user->id;
-        $address->address = $dataForm['address'];
-        $address->district = $dataForm['district'];
-        $address->state = $dataForm['state'];
-        $address->city = $dataForm['city'];
-        $address->country = $dataForm['country'];
-        $address->number = $dataForm['number'];
+        $address->cep = '';
 
         $person = new Person();
         $person->id_user = $user->id;
