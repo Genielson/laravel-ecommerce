@@ -7,6 +7,14 @@
             <div class="card">
                 <div class="card-header">Dados Pessoais </div>
 
+                @if(Session::has('messageSuccess'))
+                   <p class="alert text-center alert-success"> {{Session::get('messageSuccess')}} </p>
+                @endif
+
+                @if(Session::has('messageError'))
+                   <p class="alert text-center alert-danger"> {{Session::get('messageError')}} </p>
+                @endif
+
                 <form method="POST" action="{{ route('meus-dados') }}">
                     @csrf
                     <div class=" m-2 form-group">

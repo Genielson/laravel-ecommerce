@@ -62,10 +62,10 @@ class PersonalDataController extends Controller
 
         if($user->save() && $person->save() && $address->save()){
             return redirect()->route('meus-dados')
-            ->with('message','Dados salvos com sucesso! ');
+            ->with('messageSuccess','Dados salvos com sucesso! ');
         }else{
             return redirect()->route('meus-dados')
-            ->with('message','Houve um erro ao salvar os dados! ');
+            ->with('messageError','Houve um erro ao salvar os dados! ');
         }
 
 
