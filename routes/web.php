@@ -32,6 +32,8 @@ Route::get('/detalhes', [ProductController::class,'detailProduct'])->name('detal
 
 
 Route::get('/meus-dados', [PersonalDataController::class,'allDataPersonalUser'])->name('meus-dados');
+Route::post('/meus-dados', [PersonalDataController::class,'saveDataPersonalUser'])->name('meus-dados');
+
 Route::get('/meus-desejos', [UserWishController::class,'allDataWishUser'])->name('meus-desejos');
 Route::get('/meus-pedidos', [UserOrderController::class,'allDataOrderUser'])->name('meus-pedidos');
 

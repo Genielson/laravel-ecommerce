@@ -7,16 +7,17 @@
             <div class="card">
                 <div class="card-header">Dados Pessoais </div>
 
-                <form>
+                <form method="POST" action="{{ route('meus-dados') }}">
+                    @csrf
                     <div class=" m-2 form-group">
                         <label for="exampleInputEmail1">Nome </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" value="{{ $user->name }}" aria-describedby="emailHelp" placeholder="Seu nome ">
+                        <input type="text" class="form-control" name="nome" id="exampleInputEmail1" value="{{ $user->name }}" aria-describedby="emailHelp" placeholder="Seu nome ">
 
                     </div>
 
                     <div class="m-2 form-group">
                         <label for="exampleInputEmail1">CPF </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" value="{{ $person->cpf }}"  aria-describedby="emailHelp" placeholder="Seu CPF">
+                        <input type="text" class="form-control" name="cpf" id="exampleInputEmail1" value="{{ $person->cpf }}"  aria-describedby="emailHelp" placeholder="Seu CPF">
 
                     </div>
 
@@ -40,33 +41,33 @@
 
                       <div class="m-2 form-group">
                         <label for="exampleInputEmail1">Cidade  </label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" value="{{ $address->city }}"  aria-describedby="emailHelp" placeholder="Sua cidade">
+                        <input type="text" class="form-control" name="cidade" id="exampleInputEmail1" value="{{ $address->city }}"  aria-describedby="emailHelp" placeholder="Sua cidade">
                       </div>
 
                       <div class="m-2 form-group">
                         <label for="exampleInputEmail1">CEP </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" value="{{ $address->cep }}"   aria-describedby="emailHelp" placeholder="Seu CEP">
+                        <input type="text" class="form-control" name="cep" id="exampleInputEmail1" value="{{ $address->cep }}"   aria-describedby="emailHelp" placeholder="Seu CEP">
 
                     </div>
 
                       <div class="m-2 form-group">
                         <label for="exampleInputEmail1">Logradouro </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" value="{{ $address->address }}"  aria-describedby="emailHelp" placeholder="Seu Bairro">
+                        <input type="text" class="form-control" name="logradouro" id="exampleInputEmail1" value="{{ $address->address }}"  aria-describedby="emailHelp" placeholder="Seu Bairro">
                       </div>
 
                       <div class="m-2 form-group">
                         <label for="exampleInputEmail1">Numero </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" value="{{ $address->number }}"  aria-describedby="emailHelp" placeholder="Numero da sua casa/apartamento">
+                        <input type="text" class="form-control" name="numero" id="exampleInputEmail1" value="{{ $address->number }}"  aria-describedby="emailHelp" placeholder="Numero da sua casa/apartamento">
                       </div>
 
                       <div class="m-2 form-group">
                         <label for="exampleInputEmail1"> Bairro </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" value="{{ $address->district }}" aria-describedby="emailHelp" placeholder="Seu bairro">
+                        <input type="text" class="form-control" name="bairro" id="exampleInputEmail1" value="{{ $address->district }}" aria-describedby="emailHelp" placeholder="Seu bairro">
                       </div>
 
                     <div class="m-2 form-group">
                         <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" value="{{ $user->email }}" aria-describedby="emailHelp" placeholder="Seu email">
+                        <input type="email" class="form-control" name="email" id="exampleInputEmail1" value="{{ $user->email }}" aria-describedby="emailHelp" placeholder="Seu email">
 
                     </div>
 

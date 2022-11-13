@@ -29,4 +29,47 @@ class PersonalDataController extends Controller
         ]);
     }
 
+
+
+       /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function saveDataPersonalUser(Request $request){
+        $id = auth()->user()->id;
+        $user = new User();
+        $person = new Person();
+        $address = new Address();
+        $user->id = $id;
+        $user->email = $request->input("email");
+        $user->name = $request->input("nome");
+
+        $person->id_user = $id;
+        $person->name = $request->input("nome");
+        $person->cpf = $request->input("cpf");
+        $person->name = $request->input("nome");
+
+        $address->id_user = $id;
+        $address->address = $request->input('endereco');
+        $address->number = $request->input('numero');
+        $address->district = $request->input('bairro');
+        $address->state = $request->input('estado');
+        $address->city = $request->input('city');
+        $address->country = 'BRA';
+        $address->cep = $request->input('cep');
+
+        if($user->save() && $person->save() && $address->save()){
+            return redirect()->route('meus-dados')
+            ->with('message','Dados salvos com sucesso! ');
+        }else{
+            return redirect()->route('meus-dados')
+            ->with('message','Houve um erro ao salvar os dados! ');
+        }
+
+
+
+    }
+
 }
