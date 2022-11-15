@@ -22,7 +22,10 @@ class CartController extends Controller
 
 
 
-    public function addItemToCart($id){
+    public function addItemToCart($id = null ){
+        if(isset($_GET['idProduct'])){
+            $id = $_GET['idProduct'];
+        }
         $user = Auth::user();
         DB::beginTransaction();
 

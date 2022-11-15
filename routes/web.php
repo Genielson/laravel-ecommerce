@@ -37,9 +37,7 @@ Route::post('/meus-dados', [PersonalDataController::class,'saveDataPersonalUser'
 Route::get('/meus-desejos', [UserWishController::class,'allDataWishUser'])->name('meus-desejos');
 Route::get('/meus-pedidos', [UserOrderController::class,'allDataOrderUser'])->name('meus-pedidos');
 
-Route::post('/adicionar-item-carrinho/{id}',[CartController::class,'addItemToCart']);
-
-
+Route::get('/adicionar-item-carrinho',[CartController::class,'addItemToCart']);
 Route::get('/remover-item-carrinho',[CartController::class,'removeItemToCart']);
 
 

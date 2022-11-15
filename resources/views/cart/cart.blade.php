@@ -62,7 +62,7 @@
                                                             <div class="quantity buttons_added">
                                                                 <button type="button" class="minus" id="minus" value="{{ $item->id_product }}"> - </button>
                                                                 <input type="number" size="4" class="input-text qty text" title="Qty" value="{{ $item->quantity }}" min="0" step="1">
-                                                                <button type="button" class="plus" value="{{ $item->id_product }}"> + </button>
+                                                                <button type="button" class="plus" id="plus" value="{{ $item->id_product }}"> + </button>
                                                             </div>
                                                         </td>
 
@@ -149,18 +149,6 @@
             </div>
         </div>
     </div>
-
-
-    <script>
-
-
-
-
-
-    </script>
-
-    <script src="{{ asset('js/removeItem.js') }}">
-    <script src="{{ asset('js/addingItem.js') }}">
 
 
 

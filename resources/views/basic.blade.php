@@ -54,6 +54,8 @@
 
 <!-- Main Script -->
 <script src="js/main.js"></script>
+<script src="{{ asset('js/removeItem.js') }}"></script>
+<script src="{{ asset('js/addingItem.js') }}"></script>
 
 <!-- Slider -->
 <script type="text/javascript" src="js/bxslider.min.js"></script>
