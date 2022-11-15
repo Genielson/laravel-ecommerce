@@ -10,7 +10,7 @@
                 <ul class="list-group">
                     <li class="list-group-item"> <a href="">Meus Pedidos</a></li>
                     <li class="list-group-item"><a href="">Meu Carrinho</a></li>
-                    <li class="list-group-item"><a href="">Lista de Desejos</a></li>
+                    <!--<li class="list-group-item"><a href="">Lista de Desejos</a></li>-->
                     <li class="list-group-item"><a href="{{ route('meus-dados') }}">Alterar Dados Pessoais</a></li>
 
 

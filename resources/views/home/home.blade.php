@@ -95,6 +95,7 @@
                                         <a href="{{route('adicionar',['id'=>'1'])}}" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Adicionar </a>
                                         <a href="{{route('detalhes')}}" class="view-details-link"><i class="fa fa-link"></i> Ver detalhes </a>
                                     </div>
+
                                 </div>
 
                                 <h2><a href="#">Samsung Galaxy s5- 2015</a></h2>
@@ -107,14 +108,17 @@
                                 <div class="product-f-image">
                                     <img src="img/product-2.jpg" alt="">
                                     <div class="product-hover">
+
                                         <a href="{{route('adicionar',['id'=>'1'])}}" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Adicionar </a>
                                         <a href="{{route('detalhes',['id'=>'1'])}}" class="view-details-link"><i class="fa fa-link"></i> Ver detalhes </a>
                                     </div>
+
                                 </div>
 
                                 <h2>Nokia Lumia 1320</h2>
                                 <div class="product-carousel-price">
                                     <ins>$899.00</ins> <del>$999.00</del>
+
                                 </div>
                             </div>
                             <div class="single-product">

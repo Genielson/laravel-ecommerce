@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableCartItensTable extends Migration
+class AlterTableCartitensAddDefaultvalueProduct extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateTableCartItensTable extends Migration
      */
     public function up()
     {
-        Schema::create('cart_itens', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('cart_id')->default(0);
+        Schema::table('cart_itens', function (Blueprint $table) {
             $table->unsignedBigInteger('id_product')->default(0);
-            $table->timestamps();
         });
     }
 
@@ -28,6 +25,6 @@ class CreateTableCartItensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_cart_itens');
+        //
     }
 }
