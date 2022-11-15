@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
+
 
 class CartItem extends Model
 {
@@ -32,12 +32,27 @@ class CartItem extends Model
         return true;
     }
 
-    public function getAllItensLastCart(){
+    public function removingItemCart($idCart,$idProduct){
 
-        $user = Auth::user();
-        $cart = Cart::where('status','')->where('id_user',$user->id)->get();
-        $itens = DB::table('cart_itens')->where('cart_id',$cart->id)->get()->toArray();
-        return $itens;
+        $itens = DB::table('cart_itens')->where('cart_id',$idCart)
+        ->where('id_product',$idProduct)->get()->toArray();
+
+        if($itens[0]->quantity > 1){
+            DB::table('cart_itens')->where('id',$itens[0]->id)
+            ->where('id_product',$idProduct)->where('cart_id', $idCart)
+            ->update(['quantity' => $itens[0]->quantity - 1 ]);
+            return true;
+        }else{
+            DB::table('cart_itens')->where('id',$itens[0]->id)
+            ->where('id_product',$idProduct)->where('cart_id', $idCart)->delete();
+            return true;
+        }
+
+        return false;
+
+
 
     }
+
+
 }
