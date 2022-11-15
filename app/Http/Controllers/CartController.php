@@ -13,13 +13,14 @@ class CartController extends Controller
         $cart = new Cart();
         $itens = $cart->getAllItensLastCart();
 
-
         return view('cart.cart',
         [
             'itens' => $itens
         ]);
 
     }
+
+
 
     public function addItemToCart($id){
         $user = Auth::user();
@@ -51,7 +52,7 @@ class CartController extends Controller
 
         if($cartItem->addingOrIncrementItemCart($cart->id,$id,$quantity)){
             DB::commit();
-            return view('cart.cart');
+            return redirect()->route('cart');
         }else{
             DB::rollBack();
             return false;
@@ -59,7 +60,9 @@ class CartController extends Controller
 
     }
 
-    public function removeItemToCart($id){
+    public function removeItemToCart(){
+
+        $id = $_GET['idProduct'];
 
         $user = Auth::user();
         DB::beginTransaction();
@@ -72,7 +75,7 @@ class CartController extends Controller
 
         if($cartItem->removingItemCart($cart->id,$id)){
             DB::commit();
-            return view('cart.cart');
+            return redirect()->route('cart');
         }else{
             DB::rollBack();
             return false;
