@@ -88,6 +88,7 @@ class CartController extends Controller
 
     public function removeAllQuantityProduct($id){
 
+
         $user = Auth::user();
         DB::beginTransaction();
 

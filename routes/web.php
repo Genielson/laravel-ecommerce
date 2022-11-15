@@ -39,6 +39,7 @@ Route::get('/meus-pedidos', [UserOrderController::class,'allDataOrderUser'])->na
 
 Route::get('/adicionar-item-carrinho',[CartController::class,'addItemToCart']);
 Route::get('/remover-item-carrinho',[CartController::class,'removeItemToCart']);
+Route::get('/remove-item/{id}', [CartController::class,'removeAllQuantityProduct'])->name('remove-item');
 
 
 Auth::routes();
