@@ -71,7 +71,7 @@
                                                         </td>
 
                                                         <td class="product-remove">
-                                                            <a title="Remove this item" class="remove" href="#">×</a>
+                                                            <a title="Remove this item" class="remove" href="{{ route('remove-item',['id' => $item->id_product]) }}">×</a>
                                                         </td>
 
                                                 @endforeach

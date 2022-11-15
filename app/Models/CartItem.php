@@ -49,8 +49,17 @@ class CartItem extends Model
         }
 
         return false;
+    }
 
 
+    public function removingAllQuantityItemCart($idCart,$idProduct){
+
+        $itens = DB::table('cart_itens')->where('cart_id',$idCart)
+        ->where('id_product',$idProduct)->get()->toArray();
+
+        DB::table('cart_itens')->where('id',$itens[0]->id)
+        ->where('id_product',$idProduct)->where('cart_id', $idCart)->delete();
+        return true;
 
     }
 

@@ -86,5 +86,27 @@ class CartController extends Controller
 
     }
 
+    public function removeAllQuantityProduct($id){
+
+        $user = Auth::user();
+        DB::beginTransaction();
+
+        $cart = Cart::where('status','')->where('id_user',$user->id)->get();
+        $cart = $cart[0];
+
+        $cartItem = new CartItem();
+        $cartItem->cart_id = $cart->id;
+
+        if($cartItem->removingAllQuantityItemCart($cart->id,$id)){
+            DB::commit();
+            return redirect()->route('cart');
+        }else{
+            DB::rollBack();
+            return false;
+        }
+
+
+    }
+
 
 }
