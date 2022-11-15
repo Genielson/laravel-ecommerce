@@ -28,16 +28,19 @@
                                 <table cellspacing="0" class="shop_table cart">
                                     <thead>
                                     <tr>
-                                        <th class="product-remove">&nbsp;</th>
+
                                         <th class="product-thumbnail">&nbsp;</th>
                                         <th class="product-name">Produto</th>
                                         <th class="product-price">Preço</th>
                                         <th class="product-quantity">Quantidade</th>
                                         <th class="product-subtotal">Total</th>
+                                        <th class="product-remove">&nbsp;</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr class="cart_item">
+
+                                        @foreach ($itens as $item )
 
 
                                         <td class="product-thumbnail">
@@ -45,28 +48,30 @@
                                         </td>
 
                                         <td class="product-name">
-                                            <a href="single-product.html">Ship Your Idea</a>
+                                            <a href="#">{{ $item->title }}</a>
                                         </td>
 
                                         <td class="product-price">
-                                            <span class="amount">R$15.00</span>
+                                            <span class="amount">{{ $item->price }}</span>
                                         </td>
 
                                         <td class="product-quantity">
                                             <div class="quantity buttons_added">
                                                 <input type="button" class="minus" value="-">
-                                                <input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1">
+                                                <input type="number" size="4" class="input-text qty text" title="Qty" value="{{ $item->quantity }}" min="0" step="1">
                                                 <input type="button" class="plus" value="+">
                                             </div>
                                         </td>
 
                                         <td class="product-subtotal">
-                                            <span class="amount">R$15.00</span>
+                                            <span class="amount">R$ {{ $item->price * $item->quantity }}</span>
                                         </td>
 
                                         <td class="product-remove">
                                             <a title="Remove this item" class="remove" href="#">×</a>
                                         </td>
+
+                                        @endforeach
                                     </tr>
                                     <tr>
                                         <td class="actions" colspan="6">

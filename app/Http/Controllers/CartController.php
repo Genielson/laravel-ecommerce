@@ -13,6 +13,7 @@ class CartController extends Controller
         $cart = new Cart();
         $itens = $cart->getAllItensLastCart();
 
+
         return view('cart.cart',
         [
             'itens' => $itens
