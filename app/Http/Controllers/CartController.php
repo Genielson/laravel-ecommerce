@@ -10,7 +10,14 @@ use Illuminate\Support\Facades\Auth;
 class CartController extends Controller
 {
     public function index(){
-        return view('cart.cart');
+        $cart = new Cart();
+        $itens = $cart->getAllItensLastCart();
+
+        return view('cart.cart',
+        [
+            'itens' => $itens
+        ]);
+
     }
 
     public function addItemToCart($id){

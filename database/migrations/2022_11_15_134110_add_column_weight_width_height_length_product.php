@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterTableCartitensAddDefaultvalueProduct extends Migration
+class AddColumnWeightWidthHeightLengthProduct extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class AlterTableCartitensAddDefaultvalueProduct extends Migration
      */
     public function up()
     {
-        Schema::table('cart_itens', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_product')->default(0);
+        Schema::table('products', function (Blueprint $table) {
+            $table->float('weight')->default(0);
+            $table->float('width')->default(0);
+            $table->float('height')->default(0);
+            $table->float('length')->default(0);
         });
     }
 

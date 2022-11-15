@@ -38,9 +38,7 @@
                                     </thead>
                                     <tbody>
                                     <tr class="cart_item">
-                                        <td class="product-remove">
-                                            <a title="Remove this item" class="remove" href="#">×</a>
-                                        </td>
+
 
                                         <td class="product-thumbnail">
                                             <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="img/product-thumb-2.jpg"></a>
@@ -64,6 +62,10 @@
 
                                         <td class="product-subtotal">
                                             <span class="amount">R$15.00</span>
+                                        </td>
+
+                                        <td class="product-remove">
+                                            <a title="Remove this item" class="remove" href="#">×</a>
                                         </td>
                                     </tr>
                                     <tr>
