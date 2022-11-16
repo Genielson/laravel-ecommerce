@@ -29,4 +29,10 @@ class Cart extends Model
 
     }
 
+    public function getCartUserLogged(){
+        $user = Auth::user();
+        $cart = Cart::where('status','')->where('id_user',$user->id)->get();
+        return $cart;
+    }
+
 }

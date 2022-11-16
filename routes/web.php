@@ -25,7 +25,7 @@ Route::get('/login', [\App\Http\Controllers\LoginController::class,'index'])->na
 Route::get('/carrinho', [CartController::class,'index'])->name('cart');
 Route::get('/recuperacao-senha', [\App\Http\Controllers\ForgotPasswordController::class,'index'])->name('recupera-senha');
 Route::get('/pagamento', [\App\Http\Controllers\PaymentController::class,'index'])->name('metodo-pagamento');
-Route::post('/pagamento', [\App\Http\Controllers\PaymentController::class,'index'])->name('confirma-pagamento');
+Route::post('/pagamento', [\App\Http\Controllers\OrderController::class,'createOrder'])->name('confirma-pagamento');
 Route::get('/admin/login',[ \App\Http\Controllers\LoginController::class,'loginAdmin']);
 
 Route::get('/adicionar/{id}', [CartController::class,'addItemToCart'])->name('adicionar');

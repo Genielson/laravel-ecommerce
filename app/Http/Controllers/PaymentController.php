@@ -21,6 +21,11 @@ class PaymentController extends Controller
             $subtotal += $item->price * $item->quantity;
         }
         $total += $subtotal + $frete_test;
+
+        $_SESSION['data-pre-order']['subtotal'] = $subtotal;
+        $_SESSION['data-pre-order']['total'] = $total;
+        $_SESSION['data-pre-order']['frete'] = $frete_test;
+
         return view('payment.payment',[
             'itens' => $itens,
             'subtotal' => $subtotal,
