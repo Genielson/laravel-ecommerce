@@ -21,6 +21,7 @@ class OrderController extends Controller
             $order->id_user = $user->id;
             $order->id_cart = $myCart->id;
             $order->total_value = $_SESSION['data-pre-order']['total'];
+            $order->frete = $_SESSION['data-pre-order']['frete'];
             if($order->save()){
                 DB::commit();
                 return redirect()->route('cart')
