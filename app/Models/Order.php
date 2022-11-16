@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class Order extends Model
 {
     use HasFactory;
-    protected $fillable = ['id_cart','id_user','total_value','frete'];
+    protected $fillable = ['id_cart','id_user','total_value','frete','status'];
 
     public function getAllOrderUserLogged(){
         $user = Auth::user();

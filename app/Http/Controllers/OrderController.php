@@ -24,11 +24,11 @@ class OrderController extends Controller
             $order->frete = $_SESSION['data-pre-order']['frete'];
             if($order->save()){
                 DB::commit();
-                return redirect()->route('cart')
+                return redirect()->route('pedidos')
                 ->with('messageOrderSuccess',' Pedido realizado com sucesso!');
             }else{
                 DB::rollBack();
-                return redirect()->route('cart')
+                return redirect()->route('pedidos')
                 ->with('messageOrderFail','Houve um erro ao realizar o pedido!');
             }
     }
