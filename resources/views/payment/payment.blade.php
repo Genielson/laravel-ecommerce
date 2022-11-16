@@ -25,7 +25,7 @@
 
                     <div class="product-content-right">
 
-                        <form enctype="multipart/form-data" action="#" class="checkout" method="post" name="checkout">
+                        <form enctype="multipart/form-data" action="{{ route('confirma-pagamento') }}" class="checkout" method="post" name="checkout">
 
                             <div id="customer_details" class="col2-set">
                                 <div class="row">
