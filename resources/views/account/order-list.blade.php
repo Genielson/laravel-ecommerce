@@ -11,8 +11,7 @@
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Numero do pedido</th>
-                        <th scope="col">Nome</th>
+                        <th scope="col">Pedido </th>
                         <th scope="col">Imagem</th>
                         <th scope="col">Data do pedido</th>
                         <th scope="col">Situação </th>
@@ -21,14 +20,34 @@
                     </thead>
                     <tbody>
 
-                      <tr>
-                        <th scope="row"></th>
-                        <td>1000</td>
-                        <td>Smartphone Samsung Galaxy S10</td>
-                        <td><img width="50px;" height="50px;" src="{{ asset('img/product-1.jpg') }}"></td>
-                        <td>23-10-2022</td>
-                        <td> Em separação </td>
-                      </tr>
+                       @foreach ($orders as $order )
+
+                        <tr>
+                            <th scope="row"></th>
+                            <td>PEDIDO - {{ $order->id }}</td>
+                            <td><img width="50px;" height="50px;" src="{{ asset('img/product-1.jpg') }}"></td>
+                            <td>{{ $order->created_at }}</td>
+                            <td>
+
+                                @if($order->status == 0)
+
+                                    {{ Aguardando Aprovação }}
+
+                                @elseif ($order->status == 1)
+
+                                     {{ Pedido Separado }}
+
+                                @else
+
+                                    {{ Pedido Enviado }}
+
+                                @endif
+
+
+                            </td>
+                        </tr>
+
+                      @endforeach
 
 
                     </tbody>
