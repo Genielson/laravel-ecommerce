@@ -35,4 +35,10 @@ class Cart extends Model
         return $cart;
     }
 
+    public function closeUserLoggedCart(){
+        $user = Auth::user();
+        DB::table('carts')->where('status','')
+        ->where('id_user',$user->id)->update(['status',1]);
+    }
+
 }
