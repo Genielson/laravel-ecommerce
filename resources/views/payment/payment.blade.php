@@ -62,7 +62,7 @@
 
                                             <p id="billing_state_field" class="form-row form-row-first address-field validate-state" data-o_class="form-row form-row-first address-field validate-state">
                                                 <label class="" for="billing_state">País</label>
-                                                <input type="text" id="billing_state" name="billing_state" placeholder="País" value="" class="input-text ">
+                                                <input type="text" id="billing_state" readonly name="billing_state" value="BRASIL" placeholder="País" value="" class="input-text ">
                                             </p>
 
                                             <div class="clear"></div>
@@ -79,26 +79,33 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr class="cart_item">
-                                                        <td class="product-name">
-                                                            Ship Your Idea <strong class="product-quantity">× 1</strong> </td>
-                                                        <td class="product-total">
-                                                            <span class="amount">R$15,00</span>
-                                                        </td>
-                                                    </tr>
+
+                                                    @foreach ($itens as $item )
+
+
+
+                                                        <tr class="cart_item">
+                                                            <td class="product-name">
+                                                                {{ $item->title }} <strong class="product-quantity">× {{ $item->quantity }}</strong> </td>
+                                                            <td class="product-total">
+                                                                <span class="amount">R$ {{ $item->price  }}</span>
+                                                            </td>
+                                                        </tr>
+
+                                                    @endforeach
                                                     </tbody>
                                                     <tfoot>
 
                                                     <tr class="cart-subtotal">
                                                         <th>Subtotal</th>
-                                                        <td><span class="amount">R$15,00</span>
+                                                        <td><span class="amount">R$ {{ $subtotal }} </span>
                                                         </td>
                                                     </tr>
 
                                                     <tr class="shipping">
                                                         <th>Frete</th>
                                                         <td>
-                                                            R$0,00
+                                                            R$ {{ $frete }}
                                                             <input type="hidden" class="shipping_method" value="free_shipping" id="shipping_method_0" data-index="0" name="shipping_method[0]">
                                                         </td>
                                                     </tr>
@@ -106,7 +113,7 @@
 
                                                     <tr class="order-total">
                                                         <th>Total do Pedido</th>
-                                                        <td><strong><span class="amount">R$15,00</span></strong> </td>
+                                                        <td><strong><span class="amount">{{ $total }}</span></strong> </td>
                                                     </tr>
 
                                                     </tfoot>

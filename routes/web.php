@@ -24,7 +24,7 @@ Route::get('/produtos', [ProductController::class,'index'])->name('show-products
 Route::get('/login', [\App\Http\Controllers\LoginController::class,'index'])->name('login');
 Route::get('/carrinho', [CartController::class,'index'])->name('cart');
 Route::get('/recuperacao-senha', [\App\Http\Controllers\ForgotPasswordController::class,'index'])->name('recupera-senha');
-Route::get('/pagamento', [\App\Http\Controllers\PaymentController::class,'index'])->name('method-payment');
+Route::get('/pagamento', [\App\Http\Controllers\PaymentController::class,'index'])->name('metodo-pagamento');
 Route::get('/admin/login',[ \App\Http\Controllers\LoginController::class,'loginAdmin']);
 
 Route::get('/adicionar/{id}', [CartController::class,'addItemToCart'])->name('adicionar');

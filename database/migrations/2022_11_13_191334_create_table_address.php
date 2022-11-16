@@ -17,11 +17,11 @@ class CreateTableAddress extends Migration
             $table->id();
             $table->unsignedBigInteger('id_user');
             $table->string('address')->default('');
-            $table->string('number')->default('');;
-            $table->string('district')->default('');;
-            $table->string('city')->default('');;
-            $table->string('state')->default('');;
-            $table->string('country')->default('');;
+            $table->string('number')->default('');
+            $table->string('district')->default('');
+            $table->string('city')->default('');
+            $table->string('state')->default('');
+            $table->string('country')->default('');
             $table->timestamps();
         });
 

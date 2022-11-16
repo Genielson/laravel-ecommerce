@@ -23,7 +23,7 @@
                 <div class="col-md-12">
                     <div class="product-content-right">
                         <div class="woocommerce">
-                            <form method="post" action="#">
+                            <form method="post" action="{{ route('metodo-pagamento') }}">
                                 @if(count($itens) > 0)
                                         <table cellspacing="0" class="shop_table cart">
                                             <thead>
@@ -133,7 +133,7 @@
                                     </div>
 
                                     <div class="pull-right">
-                                        <input type="submit" value="Finalizar Compra" name="proceed" class="checkout-button button alt wc-forward">
+                                        <input type="submit" value="Finalizar Compra" id="proceed" name="proceed" class="checkout-button button alt wc-forward">
                                     </div>
 
                             @else

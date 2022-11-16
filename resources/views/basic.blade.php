@@ -56,6 +56,7 @@
 <script src="js/main.js"></script>
 <script src="{{ asset('js/removeItem.js') }}"></script>
 <script src="{{ asset('js/addingItem.js') }}"></script>
+<script src="{{ asset('js/redirectToCheckout.js') }}"></script>
 
 <!-- Slider -->
 <script type="text/javascript" src="js/bxslider.min.js"></script>
