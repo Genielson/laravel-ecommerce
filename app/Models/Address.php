@@ -17,7 +17,8 @@ class Address extends Model
     public function getAddressUserLogged(){
         $user = Auth::user();
         $address = DB::table('table_address')
-        ->where('id_user',$user->id)->get()->toArray();
+        ->where('id_user',$user->id)->get()->toArray()[0];
+        return $address;
     }
 
 
