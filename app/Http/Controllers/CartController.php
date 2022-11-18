@@ -20,7 +20,7 @@ class CartController extends Controller
         [
             'itens' => $itens,
             'quantidadeItens' => $quantityItensCart,
-           'totalPreco' => $priceAllCart
+            'totalPreco' => $priceAllCart
         ]);
 
     }
