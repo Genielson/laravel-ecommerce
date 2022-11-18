@@ -41,4 +41,19 @@ class Cart extends Model
         ->where('id_user',$user->id)->update(['status',1]);
     }
 
+    public function getQuantityItensCart(){
+        $user = Auth::user();
+        if($user == NULL){
+            return NULL;
+        }else{
+            $cart = DB::table('carts')->where('status','')
+            ->where('id_user',$user->id)->get()->toArray();
+            if($cart == NULL){
+                return NULL;
+            }else{
+                return DB::table('cart_itens')->where('cart_id',$cart[0]->id)->count();
+            }
+        }
+    }
+
 }

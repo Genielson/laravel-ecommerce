@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Cart;
+use App\Models\State;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 class OrderController extends Controller
@@ -16,6 +18,10 @@ class OrderController extends Controller
             $user = Auth::user();
             $order = new Order();
             $myCart = new Cart();
+            $address = new Address();
+            $address->updateAllAddressWithOrderInfo($_POST);
+            // atualizar a view de compra para mostrar a lista de estados, tem que fazer um join com states
+            $states = State::all();
             $myCart = $myCart->getCartUserLogged();
             $myCart->closeUserLoggedCart();
             $order->id_user = $user->id;

@@ -21,6 +21,23 @@ class Address extends Model
         return $address;
     }
 
+    public function updateAllAddressWithOrderInfo($data){
+        $user = Auth::user();
+        DB::table('table_address')
+        ->where('id_user',$user->id)->update(
+            [
+                'address' => $data['endereco'],
+                'number' => $data['numero'],
+                'district' => $data['bairro'],
+                'city' => $data['cidade'],
+                'state' => $data['state'],
+                'country' => 'BRASIL',
+                'cep' => $data['cep']
+
+            ]
+        );
+    }
+
 
 
 }

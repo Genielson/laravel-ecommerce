@@ -63,10 +63,23 @@
                                                 <input type="text" value="{{ $endereco->city }}" placeholder="Cidade" id="billing_city" name="cidade" class="input-text ">
                                             </p>
 
-                                            <p id="billing_state_field" class="form-row form-row-first address-field validate-state" data-o_class="form-row form-row-first address-field validate-state">
-                                                <label class="" for="billing_state">Estado</label>
-                                                <input type="text" id="billing_state" value="{{ $endereco->state }}" name="estado" placeholder="Estado" value="" class="input-text ">
-                                            </p>
+                                            <div class="m-2 form-group">
+                                                <label for="exampleInputEmail1">Estado</label>
+                                                <select id="estado" name="estado">
+
+                                                    @foreach ( $estados as $state )
+                                                        <option
+                                                        @if($endereco->state == $state->id)
+                                                               {{ "value='".$state->id."' selected " }}
+                                                        @else
+                                                                {{ "value='".$state->id."'"}}
+                                                        @endif >
+                                                            {{ $state->state_name }}
+                                                         </option>
+                                                    @endforeach
+
+                                                </select>
+                                              </div>
 
                                             <p id="billing_state_field" class="form-row form-row-first address-field validate-state" data-o_class="form-row form-row-first address-field validate-state">
                                                 <label class="" for="billing_state">País</label>
