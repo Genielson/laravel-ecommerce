@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cart;
+use App\Models\Category;
 use App\Models\CartItem;
 
 class HomeSiteController extends Controller
@@ -14,10 +15,12 @@ class HomeSiteController extends Controller
 
          $quantityItensCart = $cart->getQuantityItensCart();
          $priceAllCart = $cart->getAllPriceCart();
+         $categories = Category::all();
 
         return view('home.home',[
            'quantidadeItens' => $quantityItensCart,
-           'totalPreco' => $priceAllCart
+           'totalPreco' => $priceAllCart,
+           'categorias' => $categories
         ]);
     }
 }

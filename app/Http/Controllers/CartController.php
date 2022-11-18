@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cart;
+use App\Models\Category;
 use App\Models\CartItem;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +13,7 @@ class CartController extends Controller
     public function index(){
         $cart = new Cart();
         $itens = $cart->getAllItensLastCart();
-
+        $category = Category::all();
         $quantityItensCart = $cart->getQuantityItensCart();
         $priceAllCart = $cart->getAllPriceCart();
 
@@ -20,7 +21,8 @@ class CartController extends Controller
         [
             'itens' => $itens,
             'quantidadeItens' => $quantityItensCart,
-            'totalPreco' => $priceAllCart
+            'totalPreco' => $priceAllCart,
+            'categorias' => $category
         ]);
 
     }
