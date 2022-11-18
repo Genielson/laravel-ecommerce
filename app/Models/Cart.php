@@ -49,9 +49,30 @@ class Cart extends Model
             $cart = DB::table('carts')->where('status','')
             ->where('id_user',$user->id)->get()->toArray();
             if($cart == NULL){
-                return NULL;
+                return 0;
             }else{
                 return DB::table('cart_itens')->where('cart_id',$cart[0]->id)->count();
+            }
+        }
+    }
+
+    public function getAllPriceCart(){
+        $user = Auth::user();
+        if($user == NULL){
+            return NULL;
+        }else{
+            $cart = DB::table('carts')->where('status','')
+            ->where('id_user',$user->id)->get()->toArray();
+            if($cart == NULL){
+                return 0;
+            }else{
+                $itens = DB::table('cart_itens')
+                ->where('cart_id',$cart[0]->id)->get()->toArray();
+                $totalPrice = 0;
+                foreach($itens as $item){
+                    $totalPrice += $item->price;
+                }
+                return $totalPrice;
             }
         }
     }
