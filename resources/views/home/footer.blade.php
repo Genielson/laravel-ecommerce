@@ -40,11 +40,11 @@
             <div class="col-md-3 col-sm-6">
                 <div class="footer-newsletter">
                     <h2 class="footer-wid-title">Newsletter</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sunt id doloribus!</p>
+                    <p>Receba nossas melhores noticias </p>
                     <div class="newsletter-form">
                         <form action="#">
-                            <input type="email" placeholder="Type your email">
-                            <input type="submit" value="Subscribe">
+                            <input type="email" id="email-newsletter" name="email-newsletter" placeholder="Digite seu email">
+                            <input type="submit" id="subscribe" name="subscribe" value="Subscribe">
                         </form>
                     </div>
                 </div>
