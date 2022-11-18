@@ -11,11 +11,13 @@ class HomeSiteController extends Controller
     public function index(){
 
          $cart = new Cart();
+
          $quantityItensCart = $cart->getQuantityItensCart();
          $priceAllCart = $cart->getAllPriceCart();
 
         return view('home.home',[
-
+           'quantidadeItens' => $quantityItensCart,
+           'totalPreco' => $priceAllCart
         ]);
     }
 }

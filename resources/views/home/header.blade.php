@@ -51,7 +51,7 @@
 
             <div class="col-sm-6">
                 <div class="shopping-item">
-                    <a href="carrinho.html">Carrinho - <span class="cart-amunt">R$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                    <a href="carrinho.html">Carrinho - <span class="cart-amunt">R$ {{ $totalPreco ?? '0,00' }}</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">{{ $quantidadeItens ?? '0' }}</span></a>
                 </div>
             </div>
         </div>

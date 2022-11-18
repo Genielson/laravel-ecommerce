@@ -13,9 +13,14 @@ class CartController extends Controller
         $cart = new Cart();
         $itens = $cart->getAllItensLastCart();
 
+        $quantityItensCart = $cart->getQuantityItensCart();
+        $priceAllCart = $cart->getAllPriceCart();
+
         return view('cart.cart',
         [
-            'itens' => $itens
+            'itens' => $itens,
+            'quantidadeItens' => $quantityItensCart,
+           'totalPreco' => $priceAllCart
         ]);
 
     }

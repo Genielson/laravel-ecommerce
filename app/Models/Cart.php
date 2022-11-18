@@ -66,7 +66,7 @@ class Cart extends Model
             if($cart == NULL){
                 return 0;
             }else{
-                $itens = DB::table('cart_itens')
+                $itens = DB::table('cart_itens')->join('products','products.id','=','cart_itens.id_product')
                 ->where('cart_id',$cart[0]->id)->get()->toArray();
                 $totalPrice = 0;
                 foreach($itens as $item){
