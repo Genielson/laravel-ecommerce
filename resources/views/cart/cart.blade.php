@@ -24,7 +24,7 @@
                     <div class="product-content-right">
                         <div class="woocommerce">
                             <form method="post" action="{{ route('metodo-pagamento') }}">
-                                @if(count($itens) > 0)
+                                @if($itens != NULL && count($itens) > 0)
                                         <table cellspacing="0" class="shop_table cart">
                                             <thead>
                                             <tr>
