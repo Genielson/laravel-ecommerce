@@ -98,7 +98,7 @@
                                             <img src="{{asset('img/'.$produto->img)}}" alt="">
                                             <div class="product-hover">
                                                 <a href="{{route('adicionar',['id'=> $produto->id])}}" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Adicionar </a>
-                                                <a href="{{route('detalhes')}}" class="view-details-link"><i class="fa fa-link"></i> Ver detalhes </a>
+                                                <a href="{{route('detalhes',['id'=> $produto->id])}}" class="view-details-link"><i class="fa fa-link"></i> Ver detalhes </a>
                                             </div>
 
                                         </div>

@@ -23,34 +23,18 @@
 
                     <div class="single-sidebar">
                         <h2 class="sidebar-title">Produtos</h2>
-                        <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
-                            </div>
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
-                            </div>
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
-                            </div>
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$100.00</del>
-                            </div>
-                        </div>
+                        @if(count($produtos) > 0)
+                            @foreach ($produtos as $pro )
+                                <div class="thubmnail-recent">
+                                    <img src="{{asset('img/'.$pro->img)}}" class="recent-thumb" alt="">
+                                    <h2><a href="">{{ $pro->title }}</a></h2>
+                                    <div class="product-sidebar-price">
+                                        <ins>R$ {{ $pro->price }}</ins>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+
                     </div>
 
                 </div>
@@ -67,7 +51,7 @@
                             <div class="col-sm-6">
                                 <div class="product-images">
                                     <div class="product-main-img">
-                                        <img src="img/product-2.jpg" alt="">
+                                        <img src="{{asset('img/'.$produto->img)}}" alt="">
                                     </div>
 
                                     <div class="product-gallery">
@@ -80,17 +64,18 @@
 
                             <div class="col-sm-6">
                                 <div class="product-inner">
-                                    <h2 class="product-name">Sony Smart TV - 2015</h2>
+                                    <h2 class="product-name">{{ $produto->title }}</h2>
                                     <div class="product-inner-price">
-                                        <ins>$700.00</ins> <del>$100.00</del>
+                                        <ins>R$ {{ $produto->price }}</ins>
                                     </div>
 
-                                    <form action="" class="cart">
-                                        <div class="quantity">
-                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
-                                        </div>
-                                        <button class="add_to_cart_button" type="submit">Add to cart</button>
-                                    </form>
+
+                                                        <div class="quantity buttons_added">
+                                                                <button type="button" class="minus" id="minus" value="{{ $produto->id }}"> - </button>
+                                                                <input type="number" size="4" class="input-text qty text" title="Qty" value="" min="0" step="1">
+                                                                <button type="button" class="plus" id="plus" value="{{ $produto->id }}"> + </button>
+                                                            </div>
+                                                        </td>
 
                                     <div class="product-inner-category">
                                         <p>Category: <a href="">Summer</a>.
