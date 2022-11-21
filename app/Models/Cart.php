@@ -37,8 +37,7 @@ class Cart extends Model
 
     public function closeUserLoggedCart(){
         $user = Auth::user();
-        DB::table('carts')->where('status','')
-        ->where('id_user',$user->id)->update(['status',1]);
+        DB::table('carts')->where('status','=',0)->where('id_user','=',$user->id)->update(['status' => 1]);
     }
 
     public function getQuantityItensCart(){

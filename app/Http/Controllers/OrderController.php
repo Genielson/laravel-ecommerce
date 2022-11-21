@@ -15,23 +15,22 @@ class OrderController extends Controller
 
     public function createOrder(){
             DB::beginTransaction();
+            session_start();
             $user = Auth::user();
             $order = new Order();
             $myCart = new Cart();
             $address = new Address();
             $address->updateAllAddressWithOrderInfo($_POST);
-            // atualizar a view de compra para mostrar a lista de estados, tem que fazer um join com states
-            $states = State::all();
-            $myCart = $myCart->getCartUserLogged();
+            $userCart = $myCart->getCartUserLogged();
             $myCart->closeUserLoggedCart();
             $order->id_user = $user->id;
-            $order->id_cart = $myCart->id;
+            $order->id_cart = $userCart[0]->id;
             $order->total_value = $_SESSION['data-pre-order']['total'];
             $order->frete = $_SESSION['data-pre-order']['frete'];
+
             if($order->save()){
                 DB::commit();
-                return redirect()->route('pedidos')
-                ->with('messageOrderSuccess',' Pedido realizado com sucesso!');
+                return view('payment.payment-paypal');
             }else{
                 DB::rollBack();
                 return redirect()->route('pedidos')

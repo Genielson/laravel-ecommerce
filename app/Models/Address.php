@@ -30,7 +30,7 @@ class Address extends Model
                 'number' => $data['numero'],
                 'district' => $data['bairro'],
                 'city' => $data['cidade'],
-                'state' => $data['state'],
+                'state' => $data['estado'],
                 'country' => 'BRASIL',
                 'cep' => $data['cep']
 

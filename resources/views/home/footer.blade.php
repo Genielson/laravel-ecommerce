@@ -30,9 +30,8 @@
                 <div class="footer-menu">
                     <h2 class="footer-wid-title">Categorias</h2>
                     <ul>
-                        @foreach ($categorias as $categoria )
-                            <li><a href="#">{{ $categoria->title }}</a></li>
-                        @endforeach
+
+
                     </ul>
                 </div>
             </div>

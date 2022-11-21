@@ -6,13 +6,16 @@ use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\State;
 use App\Models\Address;
-
+use Illuminate\Support\Facades\Auth;
 class PaymentController extends Controller
 {
     public function index(){
-
+        session_start();
+        $user = Auth::user();
         $cart = new Cart();
         $itens = $cart->getAllItensLastCart();
+        $_SESSION['itens-cart'] = $itens;
+        $_SESSION['email-user'] = $user->email;
         $address = new Address();
         $states = State::all();
         $userAddress = $address->getAddressUserLogged();

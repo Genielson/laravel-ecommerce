@@ -17,7 +17,7 @@ class CreateOrderTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_cart');
             $table->unsignedBigInteger('id_user');
-            $table->unsignedTinyInteger('total_value');
+            $table->float('total_value');
             $table->timestamps();
         });
 

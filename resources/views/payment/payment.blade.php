@@ -145,7 +145,7 @@
 
                                                     <div class="form-row place-order">
 
-                                                        <input type="submit" data-value="Place order" value="Pagar" id="place_order" name="woocommerce_checkout_place_order" class="button alt">
+                                                        <input type="submit" data-value="Place order" value="ṔAGAR VIA PAYPAL " id="place_order" name="woocommerce_checkout_place_order" class="button alt">
 
 
                                                     </div>
