@@ -17,6 +17,7 @@ class Order extends Model
         $orders = DB::table('orders')
             ->join('table_address','table_address.id_user','=','orders.id_user')
             ->where('orders.id_user',$user->id)->get()->toArray();
+            return $orders;
     }
 
 }

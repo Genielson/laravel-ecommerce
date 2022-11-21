@@ -12,6 +12,6 @@ class UserOrderController extends Controller
 
         $allOrders = new Order();
         $allOrders = $allOrders->getAllOrderUserLogged();
-        return view('account.order-list',['orders'=> $allOrders]);
+        return view('account.order-list',['itens'=> $allOrders]);
     }
 }

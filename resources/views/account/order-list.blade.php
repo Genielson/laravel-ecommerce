@@ -7,6 +7,8 @@
             <div class="card">
                 <div class="card-header">Meus Pedidos  </div>
 
+                @if($itens != NULL && count($itens) > 0)
+
                 <table class="table">
                     <thead>
                       <tr>
@@ -20,26 +22,26 @@
                     </thead>
                     <tbody>
 
-                       @foreach ($orders as $order )
+                       @foreach ($itens as $item )
 
                         <tr>
                             <th scope="row"></th>
-                            <td>PEDIDO - {{ $order->id }}</td>
+                            <td>PEDIDO - {{ $item->id }}</td>
                             <td><img width="50px;" height="50px;" src="{{ asset('img/product-1.jpg') }}"></td>
-                            <td>{{ $order->created_at }}</td>
+                            <td>{{ $item->created_at }}</td>
                             <td>
 
-                                @if($order->status == 0)
+                                @if($item->status == 0)
 
-                                    {{ Aguardando Aprovação }}
+                                     Aguardando Aprovação
 
-                                @elseif ($order->status == 1)
+                                @elseif ($item->status == 1)
 
-                                     {{ Pedido Separado }}
+                                      Pedido Separado
 
                                 @else
 
-                                    {{ Pedido Enviado }}
+                                      Pedido Enviado
 
                                 @endif
 
@@ -53,6 +55,12 @@
                     </tbody>
                   </table>
 
+
+                  @else
+
+                        <h2 style="text-align: center" > Desculpe, mas não existe pedidos realizados . </h2>
+
+                  @endif
 
             </div>
 
