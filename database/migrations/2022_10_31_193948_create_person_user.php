@@ -19,7 +19,7 @@ class CreatePersonUser extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('cpf')->nullable();
-            $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('id_user')->nullable();
             $table->timestamps();
 
         });
