@@ -31,6 +31,8 @@ class PaymentController extends Controller
         $_SESSION['data-pre-order']['total'] = $total;
         $_SESSION['data-pre-order']['frete'] = $frete_test;
 
+
+
         return view('payment.payment',[
             'itens' => $itens,
             'subtotal' => $subtotal,
